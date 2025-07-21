@@ -1,47 +1,63 @@
 {
     "name": "ilmedova/chattle",
-    "description": "This is a laravel library package for simple realization of customer support chatting",
+    "description": "A Laravel package that provides a complete chat system for customer support with admin panel, ticketing system, and real-time messaging using WebSockets.",
     "type": "library",
-    "homepage": "https://github.com/ilmedova/chattle",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Mahri Ilmedova",
-            "email": "ilmedovamahri@gmail.com",
-            "role": "Creator & Maintainer",
-            "homepage": "https://github.com/ilmedova"
-        }
-    ],
     "keywords": [
-        "laravel support",
-        "laravel chat",
-        "customer support",
-        "ticketing system",
+        "chat",
+        "Customer support",
+        "Laravel Support",
+        "Laravel Chat",
+        "support chat",
+        "Ticketing System",
         "laravel ticket",
         "chattle",
         "mahri",
         "websockets chat",
-        "support chat",
         "admin chat",
         "laravel websockets",
-        "chat",
         "customer chat"
     ],
+    "homepage": "https://github.com/ilmedova/chattle",
+    "authors": [
+        {
+            "name": "Mahri Ilmedova",
+            "email": "mahri.ilmedova@gmail.com"
+        }
+    ],
     "require": {
-        "laravel/framework": "^10.0 || ^11.0",
+        "php": "^8.1|^8.2|^8.3",
+        "laravel/framework": "^10.0|^11.0",
         "beyondcode/laravel-websockets": "^1.13"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0|^11.0"
     },
     "autoload": {
         "psr-4": {
-            "Ilmedova\\Chattle\\": "src"
+            "Ilmedova\\Chattle\\": "src/"
         }
     },
-    "minimum-stability": "dev",
+    "autoload-dev": {
+        "psr-4": {
+            "Ilmedova\\Chattle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Ilmedova\\Chattle\\ChatServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
